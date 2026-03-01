@@ -1,0 +1,173 @@
+/* Conteneur du carrousel */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Piste du carrousel */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+/* Diapositive du carrousel */
+.carousel-slide {
+  min-width: 100%; /* Chaque diapositive occupe toute la largeur du conteneur */
+  box-sizing: border-box;
+}
+
+/* Assurer que les images s'adaptent bien */
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* Autres styles */
+ body {
+      margin: 0;
+      padding: 0;
+    }
+    .announcement__text {
+      text-align: center;
+      background-color: gray;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+/* En-tête */
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  text-align: center;
+  font-weight: bold;
+  color: #ED6;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center; /* Centrer la navigation */
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative; /* Nécessaire pour le positionnement des sous-menus */
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+/* Sous-menu */
+nav ul li .submenu {
+  display: none; /* Cacher le sous-menu par défaut */
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 100%; /* Positionner le sous-menu en dessous du lien parent */
+  left: 0;
+}
+
+nav ul li .submenu li {
+  display: block;
+}
+
+nav ul li .submenu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li .submenu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Afficher le sous-menu au survol du lien parent */
+nav ul li:hover .submenu {
+  display: block;
+}
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Médias requièrent des ajustements de style pour les appareils mobiles */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin-right: 0;
+  }
+  
+  nav ul li .submenu {
+    position: static;
+    box-shadow: none;
+  }
+
+  nav ul li:hover .submenu {
+    display: none;
+  }
+
+  nav ul li .submenu {
+    display: block;
+  }
+}
+.header-item--logo,
+  .header-layout--left-center .header-item--logo,
+  .header-layout--left-center .header-item--icons {
+    -webkit-box-flex: 0 1 140px;
+    -ms-flex: 0 1 140px;
+    flex: 0 1 140px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .header-item--logo,
+    .header-layout--left-center .header-item--logo,
+    .header-layout--left-center .header-item--icons {
+      -webkit-box-flex: 0 0 200px;
+      -ms-flex: 0 0 200px;
+      flex: 0 0 200px;
+    }
+  }
+
+  .site-header__logo a {
+    max-width: 140px;
+  }
+  .is-light .site-header__logo .logo--inverted {
+    max-width: 140px;
+  }
+  @media only screen and (min-width: 769px) {
+    .site-header__logo a {
+      max-width: 200px;
+    }
+
+    .is-light .site-header__logo .logo--inverted {
+      max-width: 200px;
+    }
+  }
